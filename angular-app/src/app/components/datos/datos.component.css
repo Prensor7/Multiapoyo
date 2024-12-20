@@ -1,0 +1,28 @@
+.image-circle {
+    width: 150px;  
+    height: 150px;
+    border-radius: 50%; 
+    overflow: hidden;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #007bff; 
+  }
+  
+  .image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+  }
+
+  .video-container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  video {
+    width: 100%;
+    height: auto; /* Mantiene la proporción del video */
+  }

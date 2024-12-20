@@ -1,0 +1,32 @@
+<p-toast></p-toast>
+
+<div class="grid justify-content-center">
+    <div class="col-8 mt-6">
+        <p-card header="EJERCICIO DE MULTIAPOYO">
+            <div class="flex flex-column gap-2">
+                <div class="flex flex-column gap-3">
+                    <p-button label="Iniciar base de datos" icon="fa-solid fa-database"
+                        (onClick)="onInitDatabase()"></p-button>
+                </div>
+                <p-tabs [value]="navNum">
+                    <p-tablist>
+                        <p-tab [value]="0">Buscador</p-tab>
+                        <p-tab [value]="1">Datos almacenados</p-tab>
+                        <p-tab [value]="2">Estadistica</p-tab>
+                    </p-tablist>
+                    <p-tabpanels>
+                        <p-tabpanel [value]="0">
+                            <app-buscador></app-buscador>
+                        </p-tabpanel>
+                        <p-tabpanel [value]="1">
+                            <app-datos></app-datos>
+                        </p-tabpanel>
+                        <p-tabpanel [value]="2">
+                            <app-estadisctica></app-estadisctica>
+                        </p-tabpanel>
+                    </p-tabpanels>
+                </p-tabs>
+            </div>
+        </p-card>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<p-toast></p-toast>
+
+<p-button label="Generar graficos" icon="fa-solid fa-rotate" [raised]="true" (onClick)="onSincronizar()"></p-button>
+<div class="grid justify-content-center">
+    <div class="col-8">
+        <p-card header="Por seguidores">
+            <p-chart type="bar" [data]="basicDataFollowers" [options]="basicOptions" />
+        </p-card>
+    </div>
+    <div class="col-8">
+        <p-card header="Por seguidos">
+            <p-chart type="bar" [data]="basicDataFollowing" [options]="basicOptions" />
+        </p-card>
+    </div>
+    <div class="col-8">
+        <p-card header="Por Score">
+            <p-chart type="bar" [data]="basicDataScore" [options]="basicOptions" />
+        </p-card>
+    </div>
+</div>

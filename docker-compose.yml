@@ -1,0 +1,41 @@
+services:
+  node-api:
+    build:
+      context: ./node-api
+    container_name: api-multiapoyo
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    depends_on:
+      - mysql-app
+
+  angular-app:
+    build:
+      context: ./angular-app
+    container_name: app-multiapoyo
+    ports:
+      - "4200:4200"  
+    networks:
+      - app-network
+
+  mysql-app:
+    image: mysql
+    container_name: mysql-multiapoyo
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: multiapoyo
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local
